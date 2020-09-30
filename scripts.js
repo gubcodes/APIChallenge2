@@ -16,8 +16,8 @@
 
 //assets
 const url = 'https://api.nasa.gov/insight_weather/?api_key=SmOaKKepEB7sVT8SDnESBJQnz2A40xjB7l4sEzAG&feedtype=json&ver=1.0';
-const url2 = 'https://api.meteostat.net/v2/stations/search/search?query=indianapolis';
-const url3 = 'https://api.meteostat.net/v2/stations/daily?station=72438&start=2019-06-01&end=2019-06-30'
+const url2 = `https://api.meteostat.net/v2/stations/search/search?query=indianapolis`; //cut down, see above
+const url3 = `https://api.meteostat.net/v2/stations/daily?station=72438&start=` //cut down, see above
 const url2Key = 't47hKspOMH0e4gdhx5kmKtH0uBxyyISK';
 //sol1
 let solTest1 = document.querySelector('.solTest1');
@@ -61,6 +61,55 @@ let tempHighTest7 = document.querySelector('.tempHighTest7');
 let tempLowTest7 = document.querySelector('.tempLowTest7');
 let pressureTest7 = document.querySelector('.pressureTest7');
 let windTest7 = document.querySelector('.windTest7');
+//day1
+let solDay1 = document.querySelector('.solDay1');
+let tempAvgDay1 = document.querySelector('.tempAvgDay1');
+let tempHighDay1 = document.querySelector('.tempHighDay1');
+let tempLowDay1 = document.querySelector('.tempLowDay1');
+let pressureDay1 = document.querySelector('.pressureDay1');
+let windDay1 = document.querySelector('.windDay1');
+//day2
+let solDay2 = document.querySelector('.solDay2');
+let tempAvgDay2 = document.querySelector('.tempAvgDay2');
+let tempHighDay2 = document.querySelector('.tempHighDay2');
+let tempLowDay2 = document.querySelector('.tempLowDay2');
+let pressureDay2 = document.querySelector('.pressureDay2');
+let windDay2 = document.querySelector('.windDay2');
+//day3
+let solDay3 = document.querySelector('.solDay3');
+let tempAvgDay3 = document.querySelector('.tempAvgDay3');
+let tempHighDay3 = document.querySelector('.tempHighDay3');
+let tempLowDay3 = document.querySelector('.tempLowDay3');
+let pressureDay3 = document.querySelector('.pressureDay3');
+let windDay3 = document.querySelector('.windDay3');
+//day4
+let solDay4 = document.querySelector('.solDay4');
+let tempAvgDay4 = document.querySelector('.tempAvgDay4');
+let tempHighDay4 = document.querySelector('.tempHighDay4');
+let tempLowDay4 = document.querySelector('.tempLowDay4');
+let pressureDay4 = document.querySelector('.pressureDay4');
+let windDay4 = document.querySelector('.windDay4');
+//day5
+let solDay5 = document.querySelector('.solDay5');
+let tempAvgDay5 = document.querySelector('.tempAvgDay5');
+let tempHighDay5 = document.querySelector('.tempHighDay5');
+let tempLowDay5 = document.querySelector('.tempLowDay5');
+let pressureDay5 = document.querySelector('.pressureDay5');
+let windDay5 = document.querySelector('.windDay5');
+//day6
+let solDay6 = document.querySelector('.solDay6');
+let tempAvgDay6 = document.querySelector('.tempAvgDay6');
+let tempHighDay6 = document.querySelector('.tempHighDay6');
+let tempLowDay6 = document.querySelector('.tempLowDay6');
+let pressureDay6 = document.querySelector('.pressureDay6');
+let windDay6 = document.querySelector('.windDay6');
+//day7
+let solDay7 = document.querySelector('.solDay7');
+let tempAvgDay7 = document.querySelector('.tempAvgDay7');
+let tempHighDay7 = document.querySelector('.tempHighDay7');
+let tempLowDay7 = document.querySelector('.tempLowDay7');
+let pressureDay7 = document.querySelector('.pressureDay7');
+let windDay7 = document.querySelector('.windDay7');
 
 //NASA --------------------------------------------------
 fetch(url)
@@ -73,7 +122,6 @@ fetch(url)
 
 function displayResults(JSO) {
     console.log(JSO.sol_keys); //array of sols available in json
-    console.log(JSO.sol_keys[0].AT); //example of sol1 average temperature
     let sol1 = JSO.sol_keys[0];
     let sol2 = JSO.sol_keys[1];
     let sol3 = JSO.sol_keys[2];
@@ -123,11 +171,25 @@ function displayResults(JSO) {
     tempLowTest7.innerText=JSO[`${sol7}`].AT.mn;
     pressureTest7.innerText=JSO[`${sol7}`].PRE.av;
     windTest7.innerText=JSO[`${sol7}`].HWS.av;
-    console.log('test: ', JSO[JSO.sol_keys[6]].First_UTC)
+    //gettin them dates
+    let date1Unf = JSO[JSO.sol_keys[0]].First_UTC;
+    date1 = date1Unf.slice(0, 10);
+    let date2Unf = JSO[JSO.sol_keys[1]].First_UTC;
+    date2 = date2Unf.slice(0, 10);
+    let date3Unf = JSO[JSO.sol_keys[2]].First_UTC;
+    date3 = date3Unf.slice(0, 10);
+    let date4Unf = JSO[JSO.sol_keys[3]].First_UTC;
+    date4 = date4Unf.slice(0, 10);
+    let date5Unf = JSO[JSO.sol_keys[4]].First_UTC;
+    date5 = date5Unf.slice(0, 10);
+    let date6Unf = JSO[JSO.sol_keys[5]].First_UTC;
+    date6 = date6Unf.slice(0, 10);
+    let date7Unf = JSO[JSO.sol_keys[6]].First_UTC;
+    date7 = date7Unf.slice(0, 10);
+    console.log(date1, date2, date3, date4, date5, date6, date7); //our dates to plug into meteostat url3
 
-    //attempting to get the date:
-    console.log('get the date: ', JSO.First_UTC)
-}
+
+
 
 //meteostat ---------------------------------------------
 fetch(url2, {
@@ -146,7 +208,7 @@ function displayResultsStation(JSO2) {
 console.log(JSO2);
 }
 
-fetch(url3, {
+fetch(url3 + date1 + '&end=' + date7, {
     headers: {
         'x-api-key' : url2Key
     },
@@ -155,9 +217,76 @@ fetch(url3, {
     return result.json();
 }).then(function(JSO3) {
     // console.log(JSO3);
-    displayResultsStation(JSO3);
+    displayResultsWeek(JSO3);
 });
 
-function displayResultsStation(JSO3) {
-console.log(JSO3);
+function displayResultsWeek(JSO3) {
+console.log(JSO3.data[0].date); //targeting date
+console.log(JSO3.data[0].tavg); //targeting average temp
+console.log(JSO3.data[0].tmax); //targeting high temp
+console.log(JSO3.data[0].tmin); //targeting low temp
+console.log(JSO3.data[0].pres); //targeting average pressure ----null (create if else statement?)
+console.log(JSO3.data[0].wspd); //targeting average windspeed
+
+let day1 = JSO3.data[0];
+let day2 = JSO3.data[1];
+let day3 = JSO3.data[2];
+let day4 = JSO3.data[3];
+let day5 = JSO3.data[4];
+let day6 = JSO3.data[5];
+let day7 = JSO3.data[6];
+//day1
+solDay1.innerText=day1.date;
+tempAvgDay1.innerText=day1.tavg;
+tempHighDay1.innerText=day1.tmax;
+tempLowDay1.innerText=day1.tmin;
+pressureDay1.innerText=day1.pres;
+windDay1.innerText=day1.wspd;
+//day2
+solDay2.innerText=day2.date;
+tempAvgDay2.innerText=day2.tavg;
+tempHighDay2.innerText=day2.tmax;
+tempLowDay2.innerText=day2.tmin;
+pressureDay2.innerText=day2.pres;
+windDay2.innerText=day2.wspd;
+//day3
+solDay3.innerText=day3.date;
+tempAvgDay3.innerText=day3.tavg;
+tempHighDay3.innerText=day3.tmax;
+tempLowDay3.innerText=day3.tmin;
+pressureDay3.innerText=day3.pres;
+windDay3.innerText=day3.wspd;
+//day4
+solDay4.innerText=day4.date;
+tempAvgDay4.innerText=day4.tavg;
+tempHighDay4.innerText=day4.tmax;
+tempLowDay4.innerText=day4.tmin;
+pressureDay4.innerText=day4.pres;
+windDay4.innerText=day4.wspd;
+//day5
+solDay5.innerText=day5.date;
+tempAvgDay5.innerText=day5.tavg;
+tempHighDay5.innerText=day5.tmax;
+tempLowDay5.innerText=day5.tmin;
+pressureDay5.innerText=day5.pres;
+windDay5.innerText=day5.wspd;
+//day6
+solDay6.innerText=day6.date;
+tempAvgDay6.innerText=day6.tavg;
+tempHighDay6.innerText=day6.tmax;
+tempLowDay6.innerText=day6.tmin;
+pressureDay6.innerText=day6.pres;
+windDay6.innerText=day6.wspd;
+//day7
+solDay7.innerText=day7.date;
+tempAvgDay7.innerText=day7.tavg;
+tempHighDay7.innerText=day7.tmax;
+tempLowDay7.innerText=day7.tmin;
+pressureDay7.innerText=day7.pres;
+windDay7.innerText=day7.wspd;
+
 }
+
+
+
+};
