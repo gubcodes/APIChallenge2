@@ -20,47 +20,54 @@ const url2 = `https://api.meteostat.net/v2/stations/search/search?query=indianap
 const url3 = `https://api.meteostat.net/v2/stations/daily?station=72438&start=` //cut down, see above
 const url2Key = 't47hKspOMH0e4gdhx5kmKtH0uBxyyISK';
 //sol1
-let solTest1 = document.querySelector('.solTest1');
-let tempHighTest1 = document.querySelector('.tempHighTest1');
-let tempLowTest1 = document.querySelector('.tempLowTest1');
-let pressureTest1 = document.querySelector('.pressureTest1');
-let windTest1 = document.querySelector('.windTest1');
+let solSol1 = document.querySelector('.solSol1');
+let tempAvgSol1 = document.querySelector('.tempAvgSol1');
+let tempHighSol1 = document.querySelector('.tempHighSol1');
+let tempLowSol1 = document.querySelector('.tempLowSol1');
+let pressureSol1 = document.querySelector('.pressureSol1');
+let windSol1 = document.querySelector('.windSol1');
 //sol2
-let solTest2 = document.querySelector('.solTest2');
-let tempHighTest2 = document.querySelector('.tempHighTest2');
-let tempLowTest2 = document.querySelector('.tempLowTest2');
-let pressureTest2 = document.querySelector('.pressureTest2');
-let windTest2 = document.querySelector('.windTest2');
+let solSol2 = document.querySelector('.solSol2');
+let tempAvgSol2 = document.querySelector('.tempAvgSol2');
+let tempHighSol2 = document.querySelector('.tempHighSol2');
+let tempLowSol2 = document.querySelector('.tempLowSol2');
+let pressureSol2 = document.querySelector('.pressureSol2');
+let windSol2 = document.querySelector('.windSol2');
 //sol3
-let solTest3 = document.querySelector('.solTest3');
-let tempHighTest3 = document.querySelector('.tempHighTest3');
-let tempLowTest3 = document.querySelector('.tempLowTest3');
-let pressureTest3 = document.querySelector('.pressureTest3');
-let windTest3 = document.querySelector('.windTest3');
+let solSol3 = document.querySelector('.solSol3');
+let tempAvgSol3 = document.querySelector('.tempAvgSol3');
+let tempHighSol3 = document.querySelector('.tempHighSol3');
+let tempLowSol3 = document.querySelector('.tempLowSol3');
+let pressureSol3 = document.querySelector('.pressureSol3');
+let windSol3 = document.querySelector('.windSol3');
 //sol4
-let solTest4 = document.querySelector('.solTest4');
-let tempHighTest4 = document.querySelector('.tempHighTest4');
-let tempLowTest4 = document.querySelector('.tempLowTest4');
-let pressureTest4 = document.querySelector('.pressureTest4');
-let windTest4 = document.querySelector('.windTest4');
+let solSol4 = document.querySelector('.solSol4');
+let tempAvgSol4 = document.querySelector('.tempAvgSol4');
+let tempHighSol4 = document.querySelector('.tempHighSol4');
+let tempLowSol4 = document.querySelector('.tempLowSol4');
+let pressureSol4 = document.querySelector('.pressureSol4');
+let windSol4 = document.querySelector('.windSol4');
 //sol5
-let solTest5 = document.querySelector('.solTest5');
-let tempHighTest5 = document.querySelector('.tempHighTest5');
-let tempLowTest5 = document.querySelector('.tempLowTest5');
-let pressureTest5 = document.querySelector('.pressureTest5');
-let windTest5 = document.querySelector('.windTest5');
+let solSol5 = document.querySelector('.solSol5');
+let tempAvgSol5 = document.querySelector('.tempAvgSol5');
+let tempHighSol5 = document.querySelector('.tempHighSol5');
+let tempLowSol5 = document.querySelector('.tempLowSol5');
+let pressureSol5 = document.querySelector('.pressureSol5');
+let windSol5 = document.querySelector('.windSol5');
 //sol6
-let solTest6 = document.querySelector('.solTest6');
-let tempHighTest6 = document.querySelector('.tempHighTest6');
-let tempLowTest6 = document.querySelector('.tempLowTest6');
-let pressureTest6 = document.querySelector('.pressureTest6');
-let windTest6 = document.querySelector('.windTest6');
+let solSol6 = document.querySelector('.solSol6');
+let tempAvgSol6 = document.querySelector('.tempAvgSol6');
+let tempHighSol6 = document.querySelector('.tempHighSol6');
+let tempLowSol6 = document.querySelector('.tempLowSol6');
+let pressureSol6 = document.querySelector('.pressureSol6');
+let windSol6 = document.querySelector('.windSol6');
 //sol7
-let solTest7 = document.querySelector('.solTest7');
-let tempHighTest7 = document.querySelector('.tempHighTest7');
-let tempLowTest7 = document.querySelector('.tempLowTest7');
-let pressureTest7 = document.querySelector('.pressureTest7');
-let windTest7 = document.querySelector('.windTest7');
+let solSol7 = document.querySelector('.solSol7');
+let tempAvgSol7 = document.querySelector('.tempAvgSol7');
+let tempHighSol7 = document.querySelector('.tempHighSol7');
+let tempLowSol7 = document.querySelector('.tempLowSol7');
+let pressureSol7 = document.querySelector('.pressureSol7');
+let windSol7 = document.querySelector('.windSol7');
 //day1
 let solDay1 = document.querySelector('.solDay1');
 let tempAvgDay1 = document.querySelector('.tempAvgDay1');
@@ -130,47 +137,54 @@ function displayResults(JSO) {
     let sol6 = JSO.sol_keys[5];
     let sol7 = JSO.sol_keys[6];
     //sol1
-    solTest1.innerText=sol1;
-    tempHighTest1.innerText=JSO[`${sol1}`].AT.mx;
-    tempLowTest1.innerText=JSO[`${sol1}`].AT.mn;
-    pressureTest1.innerText=JSO[`${sol1}`].PRE.av;
-    windTest1.innerText=JSO[`${sol1}`].HWS.av;
+    solSol1.innerText=sol1;
+    tempAvgSol1.innerText=JSO[`${sol1}`].AT.av;
+    tempHighSol1.innerText=JSO[`${sol1}`].AT.mx;
+    tempLowSol1.innerText=JSO[`${sol1}`].AT.mn;
+    // pressureSol1.innerText=JSO[`${sol1}`].PRE.av;
+    windSol1.innerText=JSO[`${sol1}`].HWS.av;
     //sol2
-    solTest2.innerText=sol2;
-    tempHighTest2.innerText=JSO[`${sol2}`].AT.mx;
-    tempLowTest2.innerText=JSO[`${sol2}`].AT.mn;
-    pressureTest2.innerText=JSO[`${sol2}`].PRE.av;
-    windTest2.innerText=JSO[`${sol2}`].HWS.av;
+    solSol2.innerText=sol2;
+    tempAvgSol2.innerText=JSO[`${sol2}`].AT.av;
+    tempHighSol2.innerText=JSO[`${sol2}`].AT.mx;
+    tempLowSol2.innerText=JSO[`${sol2}`].AT.mn;
+    // pressureSol2.innerText=JSO[`${sol2}`].PRE.av;
+    windSol2.innerText=JSO[`${sol2}`].HWS.av;
     //sol3
-    solTest3.innerText=sol3;
-    tempHighTest3.innerText=JSO[`${sol3}`].AT.mx;
-    tempLowTest3.innerText=JSO[`${sol3}`].AT.mn;
-    pressureTest3.innerText=JSO[`${sol3}`].PRE.av;
-    windTest3.innerText=JSO[`${sol3}`].HWS.av;
+    solSol3.innerText=sol3;
+    tempAvgSol3.innerText=JSO[`${sol3}`].AT.av;
+    tempHighSol3.innerText=JSO[`${sol3}`].AT.mx;
+    tempLowSol3.innerText=JSO[`${sol3}`].AT.mn;
+    // pressureSol3.innerText=JSO[`${sol3}`].PRE.av;
+    windSol3.innerText=JSO[`${sol3}`].HWS.av;
     //sol4
-    solTest4.innerText=sol4;
-    tempHighTest4.innerText=JSO[`${sol4}`].AT.mx;
-    tempLowTest4.innerText=JSO[`${sol4}`].AT.mn;
-    pressureTest4.innerText=JSO[`${sol4}`].PRE.av;
-    windTest4.innerText=JSO[`${sol4}`].HWS.av;
+    solSol4.innerText=sol4;
+    tempAvgSol4.innerText=JSO[`${sol4}`].AT.av;
+    tempHighSol4.innerText=JSO[`${sol4}`].AT.mx;
+    tempLowSol4.innerText=JSO[`${sol4}`].AT.mn;
+    // pressureSol4.innerText=JSO[`${sol4}`].PRE.av;
+    windSol4.innerText=JSO[`${sol4}`].HWS.av;
     //sol5
-    solTest5.innerText=sol5;
-    tempHighTest5.innerText=JSO[`${sol5}`].AT.mx;
-    tempLowTest5.innerText=JSO[`${sol5}`].AT.mn;
-    pressureTest5.innerText=JSO[`${sol5}`].PRE.av;
-    windTest5.innerText=JSO[`${sol5}`].HWS.av;
+    solSol5.innerText=sol5;
+    tempAvgSol5.innerText=JSO[`${sol5}`].AT.av;
+    tempHighSol5.innerText=JSO[`${sol5}`].AT.mx;
+    tempLowSol5.innerText=JSO[`${sol5}`].AT.mn;
+    // pressureSol5.innerText=JSO[`${sol5}`].PRE.av;
+    windSol5.innerText=JSO[`${sol5}`].HWS.av;
     //sol6
-    solTest6.innerText=sol6;
-    tempHighTest6.innerText=JSO[`${sol6}`].AT.mx;
-    tempLowTest6.innerText=JSO[`${sol6}`].AT.mn;
-    pressureTest6.innerText=JSO[`${sol6}`].PRE.av;
-    windTest6.innerText=JSO[`${sol6}`].HWS.av;
+    solSol6.innerText=sol6;
+    tempAvgSol6.innerText=JSO[`${sol6}`].AT.av;
+    tempHighSol6.innerText=JSO[`${sol6}`].AT.mx;
+    tempLowSol6.innerText=JSO[`${sol6}`].AT.mn;
+    // pressureSol6.innerText=JSO[`${sol6}`].PRE.av;
+    windSol6.innerText=JSO[`${sol6}`].HWS.av;
     //sol7
-    solTest7.innerText=sol7;
-    tempHighTest7.innerText=JSO[`${sol7}`].AT.mx;
-    tempLowTest7.innerText=JSO[`${sol7}`].AT.mn;
-    pressureTest7.innerText=JSO[`${sol7}`].PRE.av;
-    windTest7.innerText=JSO[`${sol7}`].HWS.av;
+    solSol7.innerText=sol7;
+    tempAvgSol7.innerText=JSO[`${sol7}`].AT.av;
+    tempHighSol7.innerText=JSO[`${sol7}`].AT.mx;
+    tempLowSol7.innerText=JSO[`${sol7}`].AT.mn;
+    // pressureSol7.innerText=JSO[`${sol7}`].PRE.av;
+    windSol7.innerText=JSO[`${sol7}`].HWS.av;
     //gettin them dates
     let date1Unf = JSO[JSO.sol_keys[0]].First_UTC;
     date1 = date1Unf.slice(0, 10);
@@ -188,8 +202,11 @@ function displayResults(JSO) {
     date7 = date7Unf.slice(0, 10);
     console.log(date1, date2, date3, date4, date5, date6, date7); //our dates to plug into meteostat url3
 
-
-
+//convert celsius to fahrenheit
+function convertTemp(celsius) {
+    let fahrenheit = celsius * 9/5 + 32;
+    return fahrenheit;
+}
 
 //meteostat ---------------------------------------------
 fetch(url2, {
@@ -237,52 +254,52 @@ let day6 = JSO3.data[5];
 let day7 = JSO3.data[6];
 //day1
 solDay1.innerText=day1.date;
-tempAvgDay1.innerText=day1.tavg;
-tempHighDay1.innerText=day1.tmax;
-tempLowDay1.innerText=day1.tmin;
-pressureDay1.innerText=day1.pres;
+tempAvgDay1.innerText=convertTemp(day1.tavg);
+tempHighDay1.innerText=convertTemp(day1.tmax);
+tempLowDay1.innerText=convertTemp(day1.tmin);
+// pressureDay1.innerText=day1.pres;
 windDay1.innerText=day1.wspd;
 //day2
 solDay2.innerText=day2.date;
-tempAvgDay2.innerText=day2.tavg;
-tempHighDay2.innerText=day2.tmax;
-tempLowDay2.innerText=day2.tmin;
-pressureDay2.innerText=day2.pres;
+tempAvgDay2.innerText=convertTemp(day2.tavg);
+tempHighDay2.innerText=convertTemp(day2.tmax);
+tempLowDay2.innerText=convertTemp(day2.tmin);
+// pressureDay2.innerText=day2.pres;
 windDay2.innerText=day2.wspd;
 //day3
 solDay3.innerText=day3.date;
-tempAvgDay3.innerText=day3.tavg;
-tempHighDay3.innerText=day3.tmax;
-tempLowDay3.innerText=day3.tmin;
-pressureDay3.innerText=day3.pres;
+tempAvgDay3.innerText=convertTemp(day3.tavg);
+tempHighDay3.innerText=convertTemp(day3.tmax);
+tempLowDay3.innerText=convertTemp(day3.tmin);
+// pressureDay3.innerText=day3.pres;
 windDay3.innerText=day3.wspd;
 //day4
 solDay4.innerText=day4.date;
-tempAvgDay4.innerText=day4.tavg;
-tempHighDay4.innerText=day4.tmax;
-tempLowDay4.innerText=day4.tmin;
-pressureDay4.innerText=day4.pres;
+tempAvgDay4.innerText=convertTemp(day4.tavg);
+tempHighDay4.innerText=convertTemp(day4.tmax);
+tempLowDay4.innerText=convertTemp(day4.tmin);
+// pressureDay4.innerText=day4.pres;
 windDay4.innerText=day4.wspd;
 //day5
 solDay5.innerText=day5.date;
-tempAvgDay5.innerText=day5.tavg;
-tempHighDay5.innerText=day5.tmax;
-tempLowDay5.innerText=day5.tmin;
-pressureDay5.innerText=day5.pres;
+tempAvgDay5.innerText=convertTemp(day5.tavg);
+tempHighDay5.innerText=convertTemp(day5.tmax);
+tempLowDay5.innerText=convertTemp(day5.tmin);
+// pressureDay5.innerText=day5.pres;
 windDay5.innerText=day5.wspd;
 //day6
 solDay6.innerText=day6.date;
-tempAvgDay6.innerText=day6.tavg;
-tempHighDay6.innerText=day6.tmax;
-tempLowDay6.innerText=day6.tmin;
-pressureDay6.innerText=day6.pres;
+tempAvgDay6.innerText=convertTemp(day6.tavg);
+tempHighDay6.innerText=convertTemp(day6.tmax);
+tempLowDay6.innerText=convertTemp(day6.tmin);
+// pressureDay6.innerText=day6.pres;
 windDay6.innerText=day6.wspd;
 //day7
 solDay7.innerText=day7.date;
-tempAvgDay7.innerText=day7.tavg;
-tempHighDay7.innerText=day7.tmax;
-tempLowDay7.innerText=day7.tmin;
-pressureDay7.innerText=day7.pres;
+tempAvgDay7.innerText=convertTemp(day7.tavg);
+tempHighDay7.innerText=convertTemp(day7.tmax);
+tempLowDay7.innerText=convertTemp(day7.tmin);
+// pressureDay7.innerText=day7.pres;
 windDay7.innerText=day7.wspd;
 
 }
