@@ -3,44 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href ="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href ="styles.css">
     <title>API Project 2</title>
 </head>
 <body>
-    <form>
-        <input class="form-control form-control-lg" id="userInput" type="text" placeholder="try 'Baidoa'">
-        <!-- <button type="button" class="btn btn-light" onclick='greetings()'>Light</button> -->
-    </form>
-    <br>
-    <p class="userCity"></p>
-    <br>
-    
+    <!-- header -->
+    <div class="d-flex flex-row justify-content-around" id="flexHeader">
+        <h1>LAST WEEK ON MARS...</h1>
+        <h4>COMPARING EARTH / MARS WEATHER DATA</h4>
+    </div>
+    <!-- search -->
+    <div class="d-flex flex-row justify-content-around">
+        <div class="space60"></div>
+        <form>
+            <input class="form-control form-control-lg" id="userInput" type="text" placeholder="try 'Indianapolis'">
+        </form>
+    </div>
+    <!-- sol/day spread 1 -->
+    <div class="d-flex flex-row justify-content-around">
+        <div class="tempBoxes">
+            <div><p class="red">Elysium Planitia</p></div>
+            <div><h2 class="tempAvgSol1"></h2></div>
+        </div>
+        <div>
+
+        </div>
+        <div class="tempBoxes">
+            <div><p class=" userCity blue"></p></div>
+            <div><h2 class="tempAvgDay1"></h2></div>
+        </div>
+    </div>
+    <!-- sol/day spread 2 -->
+    <div class="d-flex flex-row justify-content-around">
+        <div class="tempBoxes">
+            <div><h2 class="tempAvgSol2"></h2></div>
+        </div>
+        <div>
+
+        </div>
+        <div class="tempBoxes">
+            <div><h2 class="tempAvgDay2"></h2></div>
+        </div>
+    </div>
+    <!-- div below is hiding all of the tests -->
+    <div>
+        <br><br><br><br><br><br><br>
+        <br>
+        <!-- <p class="userCity"></p> -->
+        <br> 
     <div class="d-flex flex-row justify-content-around">
         <div class="d-flex flex-column">
             <p>SOL</p>
             <p>AVG TEMP</p>
             <p>HIGH TEMP</p>
             <p>LOW TEMP</p>
-            <!-- <p>AVG PRESSURE</p> -->
+            <p>AVG PRESSURE</p>
             <p>AVG WINDSPEED</p>
         </div>
         <!-- sol1 -->
         <div class="d-flex flex-column"> 
             <p class="solSol1"></p>
-            <p class="tempAvgSol1">_</p>
+            <!-- <p class="tempAvgSol1">-</p> -->
             <p class="tempHighSol1"></p>
             <p class="tempLowSol1"></p>
-            <!-- <p class="pressureSol1"></p> -->
+            <p class="pressureSol1"></p>
             <p class="windSol1"></p>
         </div>    
         <!-- day1 -->
         <div class="d-flex flex-column">
             <p class="solDay1"></p>
-            <p class="tempAvgDay1"></p>
+            <!-- <p class="tempAvgDay1">_</p> -->
             <p class="tempHighDay1"></p>
             <p class="tempLowDay1"></p>
-            <!-- <p class="pressureDay1"></p> -->
+            <p class="pressureDay1"></p>
             <p class="windDay1"></p>
         </div> 
         <!-- sol2 -->
@@ -49,7 +86,7 @@
             <p class="tempAvgSol2">_</p>
             <p class="tempHighSol2"></p>
             <p class="tempLowSol2"></p>
-            <!-- <p class="pressureSol2"></p> -->
+            <p class="pressureSol2"></p>
             <p class="windSol2"></p>
 
         </div>
@@ -59,7 +96,7 @@
             <p class="tempAvgDay2"></p>
             <p class="tempHighDay2"></p>
             <p class="tempLowDay2"></p>
-            <!-- <p class="pressureDay2"></p> -->
+            <p class="pressureDay2"></p>
             <p class="windDay2"></p>
 
         </div>
@@ -69,7 +106,7 @@
             <p class="tempAvgSol3">_</p>
             <p class="tempHighSol3"></p>
             <p class="tempLowSol3"></p>
-            <!-- <p class="pressureSol3"></p> -->
+            <p class="pressureSol3"></p>
             <p class="windSol3"></p>
 
         </div>
@@ -79,7 +116,7 @@
             <p class="tempAvgDay3"></p>
             <p class="tempHighDay3"></p>
             <p class="tempLowDay3"></p>
-            <!-- <p class="pressureDay3"></p> -->
+            <p class="pressureDay3"></p>
             <p class="windDay3"></p>
 
         </div>
@@ -89,7 +126,7 @@
             <p class="tempAvgSol4">_</p>
             <p class="tempHighSol4"></p>
             <p class="tempLowSol4"></p>
-            <!-- <p class="pressureSol4"></p> -->
+            <p class="pressureSol4"></p>
             <p class="windSol4"></p>
 
         </div>
@@ -99,7 +136,7 @@
             <p class="tempAvgDay4"></p>
             <p class="tempHighDay4"></p>
             <p class="tempLowDay4"></p>
-            <!-- <p class="pressureDay4"></p> -->
+            <p class="pressureDay4"></p>
             <p class="windDay4"></p>
             
 
@@ -110,7 +147,7 @@
             <p class="tempAvgSol5">_</p>
             <p class="tempHighSol5"></p>
             <p class="tempLowSol5"></p>
-            <!-- <p class="pressureSol5"></p> -->
+            <p class="pressureSol5"></p>
             <p class="windSol5"></p>
 
         </div>
@@ -120,7 +157,7 @@
             <p class="tempAvgDay5"></p>
             <p class="tempHighDay5"></p>
             <p class="tempLowDay5"></p>
-            <!-- <p class="pressureDay5"></p> -->
+            <p class="pressureDay5"></p>
             <p class="windDay5"></p>
 
         </div>
@@ -130,7 +167,7 @@
             <p class="tempAvgSol6">_</p>
             <p class="tempHighSol6"></p>
             <p class="tempLowSol6"></p>
-            <!-- <p class="pressureSol6"></p> -->
+            <p class="pressureSol6"></p>
             <p class="windSol6"></p>
 
         </div>
@@ -140,7 +177,7 @@
             <p class="tempAvgDay6"></p>
             <p class="tempHighDay6"></p>
             <p class="tempLowDay6"></p>
-            <!-- <p class="pressureDay6"></p> -->
+            <p class="pressureDay6"></p>
             <p class="windDay6"></p>
 
         </div>
@@ -150,7 +187,7 @@
             <p class="tempAvgSol7">_</p>
             <p class="tempHighSol7"></p>
             <p class="tempLowSol7"></p>
-            <!-- <p class="pressureSol7"></p> -->
+            <p class="pressureSol7"></p>
             <p class="windSol7"></p>
 
         </div>
@@ -160,11 +197,11 @@
             <p class="tempAvgDay7"></p>
             <p class="tempHighDay7"></p>
             <p class="tempLowDay7"></p>
-            <!-- <p class="pressureDay7"></p> -->
+            <p class="pressureDay7"></p>
             <p class="windDay7"></p>
 
         </div>
-
+    </div>
     </div>
         <!-- JS -->
     <script type="text/javascript" src="scripts.js"></script>

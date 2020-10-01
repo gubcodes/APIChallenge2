@@ -117,6 +117,8 @@ let tempHighDay7 = document.querySelector('.tempHighDay7');
 let tempLowDay7 = document.querySelector('.tempLowDay7');
 let pressureDay7 = document.querySelector('.pressureDay7');
 let windDay7 = document.querySelector('.windDay7');
+//city
+let userCity = document.querySelector('.userCity')
 
 //NASA --------------------------------------------------
 fetch(url)
@@ -138,49 +140,49 @@ function displayResults(JSO) {
     let sol7 = JSO.sol_keys[6];
     //sol1
     solSol1.innerText=sol1;
-    tempAvgSol1.innerText=JSO[`${sol1}`].AT.av;
+    tempAvgSol1.innerText=JSO[`${sol1}`].AT.av + '°F';
     tempHighSol1.innerText=JSO[`${sol1}`].AT.mx;
     tempLowSol1.innerText=JSO[`${sol1}`].AT.mn;
     // pressureSol1.innerText=JSO[`${sol1}`].PRE.av;
     windSol1.innerText=JSO[`${sol1}`].HWS.av;
     //sol2
     solSol2.innerText=sol2;
-    tempAvgSol2.innerText=JSO[`${sol2}`].AT.av;
+    tempAvgSol2.innerText=JSO[`${sol2}`].AT.av + '°F';
     tempHighSol2.innerText=JSO[`${sol2}`].AT.mx;
     tempLowSol2.innerText=JSO[`${sol2}`].AT.mn;
     // pressureSol2.innerText=JSO[`${sol2}`].PRE.av;
     windSol2.innerText=JSO[`${sol2}`].HWS.av;
     //sol3
     solSol3.innerText=sol3;
-    tempAvgSol3.innerText=JSO[`${sol3}`].AT.av;
+    tempAvgSol3.innerText=JSO[`${sol3}`].AT.av + '°F';
     tempHighSol3.innerText=JSO[`${sol3}`].AT.mx;
     tempLowSol3.innerText=JSO[`${sol3}`].AT.mn;
     // pressureSol3.innerText=JSO[`${sol3}`].PRE.av;
     windSol3.innerText=JSO[`${sol3}`].HWS.av;
     //sol4
     solSol4.innerText=sol4;
-    tempAvgSol4.innerText=JSO[`${sol4}`].AT.av;
+    tempAvgSol4.innerText=JSO[`${sol4}`].AT.av + '°F';
     tempHighSol4.innerText=JSO[`${sol4}`].AT.mx;
     tempLowSol4.innerText=JSO[`${sol4}`].AT.mn;
     // pressureSol4.innerText=JSO[`${sol4}`].PRE.av;
     windSol4.innerText=JSO[`${sol4}`].HWS.av;
     //sol5
     solSol5.innerText=sol5;
-    tempAvgSol5.innerText=JSO[`${sol5}`].AT.av;
+    tempAvgSol5.innerText=JSO[`${sol5}`].AT.av + '°F';
     tempHighSol5.innerText=JSO[`${sol5}`].AT.mx;
     tempLowSol5.innerText=JSO[`${sol5}`].AT.mn;
     // pressureSol5.innerText=JSO[`${sol5}`].PRE.av;
     windSol5.innerText=JSO[`${sol5}`].HWS.av;
     //sol6
     solSol6.innerText=sol6;
-    tempAvgSol6.innerText=JSO[`${sol6}`].AT.av;
+    tempAvgSol6.innerText=JSO[`${sol6}`].AT.av + '°F';
     tempHighSol6.innerText=JSO[`${sol6}`].AT.mx;
     tempLowSol6.innerText=JSO[`${sol6}`].AT.mn;
     // pressureSol6.innerText=JSO[`${sol6}`].PRE.av;
     windSol6.innerText=JSO[`${sol6}`].HWS.av;
     //sol7
     solSol7.innerText=sol7;
-    tempAvgSol7.innerText=JSO[`${sol7}`].AT.av;
+    tempAvgSol7.innerText=JSO[`${sol7}`].AT.av + '°F';
     tempHighSol7.innerText=JSO[`${sol7}`].AT.mx;
     tempLowSol7.innerText=JSO[`${sol7}`].AT.mn;
     // pressureSol7.innerText=JSO[`${sol7}`].PRE.av;
@@ -202,9 +204,12 @@ function displayResults(JSO) {
     date7 = date7Unf.slice(0, 10);
     console.log(date1, date2, date3, date4, date5, date6, date7); //our dates to plug into meteostat url3
 
-//convert celsius to fahrenheit
+//convert celsius to fahrenheit AND limit decimal places
 function convertTemp(celsius) {
-    let fahrenheit = celsius * 9/5 + 32;
+    let fahrenheitNum = celsius * 9/5 + 32;
+    let fahrenheitUnf = fahrenheitNum.toString();
+    console.log(typeof fahrenheitUnf);
+    let fahrenheit = fahrenheitUnf.slice(0,6);
     return fahrenheit;
 }
 
@@ -217,7 +222,7 @@ function captureSearch(e) {
     let userInput = document.getElementById('userInput').value;
     console.log(userInput);
     let userCity = document.querySelector('.userCity');
-    userCity.innerText=userInput;
+    // userCity.innerText=userInput;
     location.reload();
 }  // }
 
@@ -239,7 +244,16 @@ fetch(url2, {
 });
 
 function displayResultsStation(JSO2) {
-console.log('HERE:', JSO2.data[0].id);
+// console.log('HERE:', JSO2.data[0].name.en);
+
+//alternative text for null
+if (!JSO2.data) {
+    userCity.innerText = `Sorry, no data currently available for '` + userInput.value + `'`;
+} else {
+    userCity.innerText = JSO2.data[0].name.en;
+};
+
+console.log(JSO2.data[0].id);
 let url3 = `https://api.meteostat.net/v2/stations/daily?station=${JSO2.data[0].id}&start=`
 console.log(url3);
 
@@ -274,49 +288,49 @@ let day6 = JSO3.data[5];
 let day7 = JSO3.data[6];
 //day1
 solDay1.innerText=day1.date;
-tempAvgDay1.innerText=convertTemp(day1.tavg);
+tempAvgDay1.innerText=convertTemp(day1.tavg) + '°F';
 tempHighDay1.innerText=convertTemp(day1.tmax);
 tempLowDay1.innerText=convertTemp(day1.tmin);
 // pressureDay1.innerText=day1.pres;
 windDay1.innerText=day1.wspd;
 //day2
 solDay2.innerText=day2.date;
-tempAvgDay2.innerText=convertTemp(day2.tavg);
+tempAvgDay2.innerText=convertTemp(day2.tavg) + '°F';
 tempHighDay2.innerText=convertTemp(day2.tmax);
 tempLowDay2.innerText=convertTemp(day2.tmin);
 // pressureDay2.innerText=day2.pres;
 windDay2.innerText=day2.wspd;
 //day3
 solDay3.innerText=day3.date;
-tempAvgDay3.innerText=convertTemp(day3.tavg);
+tempAvgDay3.innerText=convertTemp(day3.tavg) + '°F';
 tempHighDay3.innerText=convertTemp(day3.tmax);
 tempLowDay3.innerText=convertTemp(day3.tmin);
 // pressureDay3.innerText=day3.pres;
 windDay3.innerText=day3.wspd;
 //day4
 solDay4.innerText=day4.date;
-tempAvgDay4.innerText=convertTemp(day4.tavg);
+tempAvgDay4.innerText=convertTemp(day4.tavg) + '°F';
 tempHighDay4.innerText=convertTemp(day4.tmax);
 tempLowDay4.innerText=convertTemp(day4.tmin);
 // pressureDay4.innerText=day4.pres;
 windDay4.innerText=day4.wspd;
 //day5
 solDay5.innerText=day5.date;
-tempAvgDay5.innerText=convertTemp(day5.tavg);
+tempAvgDay5.innerText=convertTemp(day5.tavg) + '°F';
 tempHighDay5.innerText=convertTemp(day5.tmax);
 tempLowDay5.innerText=convertTemp(day5.tmin);
 // pressureDay5.innerText=day5.pres;
 windDay5.innerText=day5.wspd;
 //day6
 solDay6.innerText=day6.date;
-tempAvgDay6.innerText=convertTemp(day6.tavg);
+tempAvgDay6.innerText=convertTemp(day6.tavg) + '°F';
 tempHighDay6.innerText=convertTemp(day6.tmax);
 tempLowDay6.innerText=convertTemp(day6.tmin);
 // pressureDay6.innerText=day6.pres;
 windDay6.innerText=day6.wspd;
 //day7
 solDay7.innerText=day7.date;
-tempAvgDay7.innerText=convertTemp(day7.tavg);
+tempAvgDay7.innerText=convertTemp(day7.tavg) + '°F';
 tempHighDay7.innerText=convertTemp(day7.tmax);
 tempLowDay7.innerText=convertTemp(day7.tmin);
 // pressureDay7.innerText=day7.pres;
