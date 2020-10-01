@@ -16,8 +16,8 @@
 
 //assets
 const url = 'https://api.nasa.gov/insight_weather/?api_key=SmOaKKepEB7sVT8SDnESBJQnz2A40xjB7l4sEzAG&feedtype=json&ver=1.0';
-const url2 = `https://api.meteostat.net/v2/stations/search/search?query=indianapolis`; //cut down, see above
-const url3 = `https://api.meteostat.net/v2/stations/daily?station=72438&start=` //cut down, see above
+let url2 = `https://api.meteostat.net/v2/stations/search/search?query=indianapolis`; //cut down, see above
+let url3 = `https://api.meteostat.net/v2/stations/daily?station=72438&start=` //cut down, see above
 const url2Key = 't47hKspOMH0e4gdhx5kmKtH0uBxyyISK';
 //sol1
 let solSol1 = document.querySelector('.solSol1');
@@ -208,6 +208,23 @@ function convertTemp(celsius) {
     return fahrenheit;
 }
 
+//search box submit
+const searchForm = document.querySelector('form');
+searchForm.addEventListener('submit', captureSearch);
+
+function captureSearch(e) {
+    e.preventDefault();
+    let userInput = document.getElementById('userInput').value;
+    console.log(userInput);
+    let userCity = document.querySelector('.userCity');
+    userCity.innerText=userInput;
+    location.reload();
+}  // }
+
+let url2 = `https://api.meteostat.net/v2/stations/search/search?query=` + userInput.value;
+console.log(url2);
+console.log(userInput);
+
 //meteostat ---------------------------------------------
 fetch(url2, {
     headers: {
@@ -217,13 +234,14 @@ fetch(url2, {
   .then(function(result) {
     return result.json();
 }).then(function(JSO2) {
-    // console.log(JSO2);
+    console.log(JSO2);
     displayResultsStation(JSO2);
 });
 
 function displayResultsStation(JSO2) {
-console.log(JSO2);
-}
+console.log('HERE:', JSO2.data[0].id);
+let url3 = `https://api.meteostat.net/v2/stations/daily?station=${JSO2.data[0].id}&start=`
+console.log(url3);
 
 fetch(url3 + date1 + '&end=' + date7, {
     headers: {
@@ -237,7 +255,9 @@ fetch(url3 + date1 + '&end=' + date7, {
     displayResultsWeek(JSO3);
 });
 
+}
 function displayResultsWeek(JSO3) {
+console.log(JSO3);
 console.log(JSO3.data[0].date); //targeting date
 console.log(JSO3.data[0].tavg); //targeting average temp
 console.log(JSO3.data[0].tmax); //targeting high temp
@@ -302,6 +322,7 @@ tempLowDay7.innerText=convertTemp(day7.tmin);
 // pressureDay7.innerText=day7.pres;
 windDay7.innerText=day7.wspd;
 
+console.log(url2);
 }
 
 
