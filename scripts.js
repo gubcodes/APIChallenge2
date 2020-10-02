@@ -212,7 +212,6 @@ function convertTemp(celsius) {
     let fahrenheit = fahrenheitUnf.slice(0,6);
     return fahrenheit;
 }
-
 //search box submit
 const searchForm = document.querySelector('form');
 searchForm.addEventListener('submit', captureSearch);
@@ -244,9 +243,9 @@ fetch(url2, {
 });
 
 function displayResultsStation(JSO2) {
-// console.log('HERE:', JSO2.data[0].name.en);
-
-//alternative text for null
+    // console.log('HERE:', JSO2.data[0].name.en);
+    
+    //alternative text for null
 if (!JSO2.data) {
     userCity.innerText = `Sorry, no data currently available for '` + userInput.value + `'`;
 } else {
@@ -255,6 +254,7 @@ if (!JSO2.data) {
 
 console.log(JSO2.data[0].id);
 let url3 = `https://api.meteostat.net/v2/stations/daily?station=${JSO2.data[0].id}&start=`
+
 console.log(url3);
 
 fetch(url3 + date1 + '&end=' + date7, {
