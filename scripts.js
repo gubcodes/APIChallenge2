@@ -212,6 +212,21 @@ function convertTemp(celsius) {
     let fahrenheit = fahrenheitUnf.slice(0,6);
     return fahrenheit;
 }
+
+
+
+//thermometer marker placement --------------!!!!!----------------
+function markerPlacement(temp) { //converts to the margin percentage we need
+    let makeNumber = parseInt(temp);
+    let paddingPercent = Math.floor((makeNumber + 200)/4);
+    return paddingPercent; //the margin percentage we need
+}
+let sol1Temp = markerPlacement(JSO[`${sol1}`].AT.av);
+console.log(sol1Temp);
+
+document.getElementById('redMarker1').style["margin-left"] = `${sol1Temp}%`; //! THIS WORKS
+
+
 //search box submit
 const searchForm = document.querySelector('form');
 searchForm.addEventListener('submit', captureSearch);
