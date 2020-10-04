@@ -139,54 +139,54 @@ function displayResults(JSO) {
     let sol6 = JSO.sol_keys[5];
     let sol7 = JSO.sol_keys[6];
     //sol1
-    solSol1.innerText=sol1;
+    solSol1.innerText='SOL ' + sol1;
     tempAvgSol1.innerText=JSO[`${sol1}`].AT.av + '°F';
-    tempHighSol1.innerText=JSO[`${sol1}`].AT.mx;
-    tempLowSol1.innerText=JSO[`${sol1}`].AT.mn;
+    // tempHighSol1.innerText=JSO[`${sol1}`].AT.mx;
+    // tempLowSol1.innerText=JSO[`${sol1}`].AT.mn;
     // pressureSol1.innerText=JSO[`${sol1}`].PRE.av;
-    windSol1.innerText=JSO[`${sol1}`].HWS.av;
+    // windSol1.innerText=JSO[`${sol1}`].HWS.av;
     //sol2
-    solSol2.innerText=sol2;
+    solSol2.innerText='SOL ' + sol2;
     tempAvgSol2.innerText=JSO[`${sol2}`].AT.av + '°F';
-    tempHighSol2.innerText=JSO[`${sol2}`].AT.mx;
-    tempLowSol2.innerText=JSO[`${sol2}`].AT.mn;
+    // tempHighSol2.innerText=JSO[`${sol2}`].AT.mx;
+    // tempLowSol2.innerText=JSO[`${sol2}`].AT.mn;
     // pressureSol2.innerText=JSO[`${sol2}`].PRE.av;
-    windSol2.innerText=JSO[`${sol2}`].HWS.av;
+    // windSol2.innerText=JSO[`${sol2}`].HWS.av;
     //sol3
-    solSol3.innerText=sol3;
+    solSol3.innerText='SOL ' + sol3;
     tempAvgSol3.innerText=JSO[`${sol3}`].AT.av + '°F';
-    tempHighSol3.innerText=JSO[`${sol3}`].AT.mx;
-    tempLowSol3.innerText=JSO[`${sol3}`].AT.mn;
+    // tempHighSol3.innerText=JSO[`${sol3}`].AT.mx;
+    // tempLowSol3.innerText=JSO[`${sol3}`].AT.mn;
     // pressureSol3.innerText=JSO[`${sol3}`].PRE.av;
-    windSol3.innerText=JSO[`${sol3}`].HWS.av;
+    // windSol3.innerText=JSO[`${sol3}`].HWS.av;
     //sol4
-    solSol4.innerText=sol4;
+    solSol4.innerText='SOL ' + sol4;
     tempAvgSol4.innerText=JSO[`${sol4}`].AT.av + '°F';
-    tempHighSol4.innerText=JSO[`${sol4}`].AT.mx;
-    tempLowSol4.innerText=JSO[`${sol4}`].AT.mn;
+    // tempHighSol4.innerText=JSO[`${sol4}`].AT.mx;
+    // tempLowSol4.innerText=JSO[`${sol4}`].AT.mn;
     // pressureSol4.innerText=JSO[`${sol4}`].PRE.av;
-    windSol4.innerText=JSO[`${sol4}`].HWS.av;
+    // windSol4.innerText=JSO[`${sol4}`].HWS.av;
     //sol5
-    solSol5.innerText=sol5;
+    solSol5.innerText='SOL ' + sol5;
     tempAvgSol5.innerText=JSO[`${sol5}`].AT.av + '°F';
-    tempHighSol5.innerText=JSO[`${sol5}`].AT.mx;
-    tempLowSol5.innerText=JSO[`${sol5}`].AT.mn;
+    // tempHighSol5.innerText=JSO[`${sol5}`].AT.mx;
+    // tempLowSol5.innerText=JSO[`${sol5}`].AT.mn;
     // pressureSol5.innerText=JSO[`${sol5}`].PRE.av;
-    windSol5.innerText=JSO[`${sol5}`].HWS.av;
+    // windSol5.innerText=JSO[`${sol5}`].HWS.av;
     //sol6
-    solSol6.innerText=sol6;
+    solSol6.innerText='SOL ' + sol6;
     tempAvgSol6.innerText=JSO[`${sol6}`].AT.av + '°F';
-    tempHighSol6.innerText=JSO[`${sol6}`].AT.mx;
-    tempLowSol6.innerText=JSO[`${sol6}`].AT.mn;
+    // tempHighSol6.innerText=JSO[`${sol6}`].AT.mx;
+    // tempLowSol6.innerText=JSO[`${sol6}`].AT.mn;
     // pressureSol6.innerText=JSO[`${sol6}`].PRE.av;
-    windSol6.innerText=JSO[`${sol6}`].HWS.av;
+    // windSol6.innerText=JSO[`${sol6}`].HWS.av;
     //sol7
-    solSol7.innerText=sol7;
+    solSol7.innerText='SOL ' + sol7;
     tempAvgSol7.innerText=JSO[`${sol7}`].AT.av + '°F';
-    tempHighSol7.innerText=JSO[`${sol7}`].AT.mx;
-    tempLowSol7.innerText=JSO[`${sol7}`].AT.mn;
+    // tempHighSol7.innerText=JSO[`${sol7}`].AT.mx;
+    // tempLowSol7.innerText=JSO[`${sol7}`].AT.mn;
     // pressureSol7.innerText=JSO[`${sol7}`].PRE.av;
-    windSol7.innerText=JSO[`${sol7}`].HWS.av;
+    // windSol7.innerText=JSO[`${sol7}`].HWS.av;
     //gettin them dates
     let date1Unf = JSO[JSO.sol_keys[0]].First_UTC;
     date1 = date1Unf.slice(0, 10);
@@ -215,16 +215,29 @@ function convertTemp(celsius) {
 
 
 
-//thermometer marker placement --------------!!!!!----------------
-function markerPlacement(temp) { //converts to the margin percentage we need
+//thermometer red marker placement --------------!!!!!----------------
+function markerPlacementSol(temp) { //converts to the margin percentage we need
     let makeNumber = parseInt(temp);
     let paddingPercent = Math.floor((makeNumber + 200)/4);
     return paddingPercent; //the margin percentage we need
 }
-let sol1Temp = markerPlacement(JSO[`${sol1}`].AT.av);
-console.log(sol1Temp);
+let sol1Temp = markerPlacementSol(JSO[`${sol1}`].AT.av);
+let sol2Temp = markerPlacementSol(JSO[`${sol2}`].AT.av);
+let sol3Temp = markerPlacementSol(JSO[`${sol3}`].AT.av);
+let sol4Temp = markerPlacementSol(JSO[`${sol4}`].AT.av);
+let sol5Temp = markerPlacementSol(JSO[`${sol5}`].AT.av);
+let sol6Temp = markerPlacementSol(JSO[`${sol6}`].AT.av);
+let sol7Temp = markerPlacementSol(JSO[`${sol7}`].AT.av);
 
-document.getElementById('redMarker1').style["margin-left"] = `${sol1Temp}%`; //! THIS WORKS
+
+document.getElementById('redMarker1').style["margin-left"] = `${sol1Temp}%`;
+document.getElementById('redMarker2').style["margin-left"] = `${sol2Temp}%`;
+document.getElementById('redMarker3').style["margin-left"] = `${sol3Temp}%`;
+document.getElementById('redMarker4').style["margin-left"] = `${sol4Temp}%`;
+document.getElementById('redMarker5').style["margin-left"] = `${sol5Temp}%`;
+document.getElementById('redMarker6').style["margin-left"] = `${sol6Temp}%`;
+document.getElementById('redMarker7').style["margin-left"] = `${sol7Temp}%`;
+console.log(sol1Temp);
 
 
 //search box submit
@@ -264,7 +277,7 @@ function displayResultsStation(JSO2) {
 if (!JSO2.data) {
     userCity.innerText = `Sorry, no data currently available for '` + userInput.value + `'`;
 } else {
-    userCity.innerText = JSO2.data[0].name.en;
+    userCity.innerText = JSO2.data[0].name.en + ', EARTH';
 };
 
 console.log(JSO2.data[0].id);
@@ -304,52 +317,87 @@ let day7 = JSO3.data[6];
 //day1
 solDay1.innerText=day1.date;
 tempAvgDay1.innerText=convertTemp(day1.tavg) + '°F';
-tempHighDay1.innerText=convertTemp(day1.tmax);
-tempLowDay1.innerText=convertTemp(day1.tmin);
+// tempHighDay1.innerText=convertTemp(day1.tmax);
+// tempLowDay1.innerText=convertTemp(day1.tmin);
 // pressureDay1.innerText=day1.pres;
-windDay1.innerText=day1.wspd;
+// windDay1.innerText=day1.wspd;
 //day2
 solDay2.innerText=day2.date;
 tempAvgDay2.innerText=convertTemp(day2.tavg) + '°F';
-tempHighDay2.innerText=convertTemp(day2.tmax);
-tempLowDay2.innerText=convertTemp(day2.tmin);
+// tempHighDay2.innerText=convertTemp(day2.tmax);
+// tempLowDay2.innerText=convertTemp(day2.tmin);
 // pressureDay2.innerText=day2.pres;
-windDay2.innerText=day2.wspd;
+// windDay2.innerText=day2.wspd;
 //day3
 solDay3.innerText=day3.date;
 tempAvgDay3.innerText=convertTemp(day3.tavg) + '°F';
-tempHighDay3.innerText=convertTemp(day3.tmax);
-tempLowDay3.innerText=convertTemp(day3.tmin);
+// tempHighDay3.innerText=convertTemp(day3.tmax);
+// tempLowDay3.innerText=convertTemp(day3.tmin);
 // pressureDay3.innerText=day3.pres;
-windDay3.innerText=day3.wspd;
+// windDay3.innerText=day3.wspd;
 //day4
 solDay4.innerText=day4.date;
 tempAvgDay4.innerText=convertTemp(day4.tavg) + '°F';
-tempHighDay4.innerText=convertTemp(day4.tmax);
-tempLowDay4.innerText=convertTemp(day4.tmin);
+// tempHighDay4.innerText=convertTemp(day4.tmax);
+// tempLowDay4.innerText=convertTemp(day4.tmin);
 // pressureDay4.innerText=day4.pres;
-windDay4.innerText=day4.wspd;
+// windDay4.innerText=day4.wspd;
 //day5
 solDay5.innerText=day5.date;
 tempAvgDay5.innerText=convertTemp(day5.tavg) + '°F';
-tempHighDay5.innerText=convertTemp(day5.tmax);
-tempLowDay5.innerText=convertTemp(day5.tmin);
+// tempHighDay5.innerText=convertTemp(day5.tmax);
+// tempLowDay5.innerText=convertTemp(day5.tmin);
 // pressureDay5.innerText=day5.pres;
-windDay5.innerText=day5.wspd;
+// windDay5.innerText=day5.wspd;
 //day6
 solDay6.innerText=day6.date;
 tempAvgDay6.innerText=convertTemp(day6.tavg) + '°F';
-tempHighDay6.innerText=convertTemp(day6.tmax);
-tempLowDay6.innerText=convertTemp(day6.tmin);
+// tempHighDay6.innerText=convertTemp(day6.tmax);
+// tempLowDay6.innerText=convertTemp(day6.tmin);
 // pressureDay6.innerText=day6.pres;
-windDay6.innerText=day6.wspd;
+// windDay6.innerText=day6.wspd;
 //day7
 solDay7.innerText=day7.date;
 tempAvgDay7.innerText=convertTemp(day7.tavg) + '°F';
-tempHighDay7.innerText=convertTemp(day7.tmax);
-tempLowDay7.innerText=convertTemp(day7.tmin);
+// tempHighDay7.innerText=convertTemp(day7.tmax);
+// tempLowDay7.innerText=convertTemp(day7.tmin);
 // pressureDay7.innerText=day7.pres;
-windDay7.innerText=day7.wspd;
+// windDay7.innerText=day7.wspd;
+
+//thermometer blue marker placement
+
+function markerPlacementDay(temp) { //converts to the margin percentage we need
+    let makeNumber = parseInt(temp);
+    let paddingPercent = Math.floor((makeNumber + 200)/4);
+    return paddingPercent; //the margin percentage we need
+}
+
+let day1TempUnf = convertTemp(day1.tavg);
+let day1Temp = markerPlacementDay(day1TempUnf);
+let day2TempUnf = convertTemp(day2.tavg);
+let day2Temp = markerPlacementDay(day2TempUnf);
+let day3TempUnf = convertTemp(day3.tavg);
+let day3Temp = markerPlacementDay(day3TempUnf);
+let day4TempUnf = convertTemp(day4.tavg);
+let day4Temp = markerPlacementDay(day4TempUnf);
+let day5TempUnf = convertTemp(day5.tavg);
+let day5Temp = markerPlacementDay(day5TempUnf);
+let day6TempUnf = convertTemp(day6.tavg);
+let day6Temp = markerPlacementDay(day6TempUnf);
+let day7TempUnf = convertTemp(day7.tavg);
+let day7Temp = markerPlacementDay(day7TempUnf);
+
+
+document.getElementById('blueMarker1').style["margin-left"] = `${day1Temp}%`;
+document.getElementById('blueMarker2').style["margin-left"] = `${day2Temp}%`;
+document.getElementById('blueMarker3').style["margin-left"] = `${day3Temp}%`;
+document.getElementById('blueMarker4').style["margin-left"] = `${day4Temp}%`;
+document.getElementById('blueMarker5').style["margin-left"] = `${day5Temp}%`;
+document.getElementById('blueMarker6').style["margin-left"] = `${day6Temp}%`;
+document.getElementById('blueMarker7').style["margin-left"] = `${day7Temp}%`;
+
+
+console.log(day1Temp);
 
 console.log(url2);
 }

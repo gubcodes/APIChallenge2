@@ -1,15 +1,16 @@
 body {
     background-image: url('assets/earthFromMars.jpg');
-    background-size: 100vw 100vh;
+    background-size: 100vw 200vh;
     background-repeat: no-repeat;
     font-family: 'Roboto Mono', monospace;
+    background-color: gray;
 }   
 /* search field */
 input[type="text"] {
     background: transparent;
     border-color: transparent transparent white transparent;
     border-radius: 0;
-    color: white;
+    color: gray;
     box-shadow: none;
     font-family: 'Roboto Mono', monospace;
 }
@@ -17,9 +18,12 @@ input[type="text"]:focus {
     background: transparent;
     border-color: transparent transparent white transparent;
     border-radius: 0;
-    color: white;
+    color: gray;
     box-shadow: none;
     font-family: 'Roboto Mono', monospace;
+}
+#userInput {
+    margin-top: 0px;
 }
 /* fonts */
 h1 {
@@ -34,7 +38,7 @@ h2 {
     font-family: 'Roboto Mono', monospace;
 }
 h4 {
-    color: white;
+    color:gray;
     font-weight: 400;
     font-family: 'Roboto Mono', monospace;
 }
@@ -44,16 +48,28 @@ p {
 }
 .red {
     color: #D28167;
+    padding-bottom: 10px;
 }
 .blue {
     color: #68B5D7;
+    padding-bottom: 10px;
+}
+.transparent {
+    color: transparent;
+    padding-top: 9px;
 }
 /* spacers */
 .space10 {
     width: 10%;
 }
-.space25 {
+.space26 {
     width: 25%;
+}
+.space30 {
+    width: 30%;
+}
+.space45 {
+    width: 45%;
 }
 .space50 {
     width: 50%;
@@ -65,17 +81,24 @@ p {
     width: 80%;
     height: 20px;
 }
+.vert20 {
+    height: 80%;
+}
+.center {
+    align-self: center;
+}
 /* flex properties */
 #flexHeader {
     align-items: center;
     margin-top: 3%;
-    margin-bottom: 9%;
+    margin-bottom: 3%;
 }
 .tempBoxes {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
+    width: 32%;
 }
 .flex-row {
     margin-top: 5%;
@@ -87,6 +110,12 @@ p {
     color: white;
     display: flex;
     justify-content: flex-end;
+}
+.y {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 /* thermometer */
 .thermometerTop {

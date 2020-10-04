@@ -9,73 +9,273 @@
     <title>API Project 2</title>
 </head>
 <body>
-    <!-- header -->
+        <!-- header -->
     <div class="d-flex flex-row justify-content-around" id="flexHeader">
-        <h1>LAST WEEK ON MARS...</h1>
-        <h4>COMPARING EARTH / MARS <br>WEATHER DATA</h4>
+        <div class="space30 alignRight"><h4>COMPARING EARTH + MARS WEATHER DATA</h4></div>
+        <div><h1>LAST WEEK ON MARS</h1></div>
+        <div class="space30"><form>
+            <input class="form-control form-control-lg y" id="userInput" type="text" placeholder="try 'Indianapolis'">
+        </form></div>
     </div>
-    <!-- search -->
-    <div class="d-flex flex-row justify-content-around">
-        <div class="space60"></div>
-        <form>
-            <input class="form-control form-control-lg" id="userInput" type="text" placeholder="try 'Indianapolis'">
-        </form>
-    </div>
-    <!-- sol/day spread 1 -->
-    <div class="d-flex flex-row justify-content-around">
+    <br>
+    <br>
+        <!-- sol/day spread 7 -->
+    <div class="d-flex flex-row justify-content-around y">
         <div class="tempBoxes">
-            <div><p class="red">Elysium Planitia</p></div>
-            <div><h2 class="tempAvgSol1"></h2></div>
+            <div><p class="red vert20">Elysium Planitia, MARS</p></div>
+            <div><h2 class="tempAvgSol7"></h2></div>
         </div>
-        <!-- middle slider -->
-        <div class="space25">
+        <div class="space26">
             <div class="d-flex flex-row">
-                <div class="space50 alignLeft"><p class="solSol1"></p></div> <!--50% + align left DONE-->
-                <div class="space50 alignRight"><p class="solDay1"></p></div> <!--50% + align right DONE-->
+                <div class="space50 alignLeft"><p class="solSol7"></p></div> 
+                <div class="space50 alignRight"><p class="solDay7"></p></div> 
             </div>
             <div class="d-flex flex-row m">
-                <div class="space10"></div> <!--10% DONE-->
-                <div class="space80 thermometerTop"> <!--80% DONE + bottom borders-->
-                    <div class = "blueMarker" id="blueMarker1"></div> <!--blue marker-->
+                <div class="space10"></div>
+                <div class="space80 thermometerTop">
+                    <div class = "blueMarker" id="blueMarker7"></div>
                 </div>
-                <div class="space10"></div> <!--10% DONE-->
+                <div class="space10"></div>
             </div>
             <div class="d-flex flex-row m">
-                <div class="space10"></div> <!--10% DONE-->
-                <div class="space80 thermometerBottom"> <!--80% DONE + top borders-->
-                    <div class="redMarker" id="redMarker1"></div> <!--red marker-->
+                <div class="space10"></div>
+                <div class="space80 thermometerBottom">
+                    <div class="redMarker" id="redMarker7"></div>
                 </div>
-                <div class="space10"></div> <!--10% DONE-->
+                <div class="space10"></div>
             </div>
             <div class="d-flex flex-row">
-                <div class="space50 alignLeft">-200°F</div> <!--50% + align left DONE-->
-                <div class="space50 alignRight">+200°F</div> <!--50% + align right DONE-->
+                <div class="space50 alignLeft">-200°F</div>
+                <div class="space50 alignRight">+200°F</div>
             </div>
         </div>
         <div class="tempBoxes">
             <div><p class=" userCity blue"></p></div>
-            <div><h2 class="tempAvgDay1"></h2></div>
+            <div><h2 class="tempAvgDay7"></h2></div>
         </div>
     </div>
-    <!-- sol/day spread 2 -->
-    <div class="d-flex flex-row justify-content-around">
+        <!-- sol/day spread 6 -->
+    <div class="d-flex flex-row justify-content-around y">
         <div class="tempBoxes">
+            <div><p class="transparent">_</p></div>
+            <div><h2 class="tempAvgSol6"></h2></div>
+        </div>
+        <div class="space26">
+            <div class="d-flex flex-row">
+                <div class="space50 alignLeft"><p class="solSol6"></p></div> 
+                <div class="space50 alignRight"><p class="solDay6"></p></div> 
+            </div>
+            <div class="d-flex flex-row m">
+                <div class="space10"></div>
+                <div class="space80 thermometerTop">
+                    <div class = "blueMarker" id="blueMarker6"></div>
+                </div>
+                <div class="space10"></div>
+            </div>
+            <div class="d-flex flex-row m">
+                <div class="space10"></div>
+                <div class="space80 thermometerBottom">
+                    <div class="redMarker" id="redMarker6"></div>
+                </div>
+                <div class="space10"></div>
+            </div>
+            <div class="d-flex flex-row">
+                <div class="space50 alignLeft">-200°F</div>
+                <div class="space50 alignRight">+200°F</div>
+            </div>
+        </div>
+        <div class="tempBoxes">
+            <div><p class="transparent">_</p></div>
+            <div><h2 class="tempAvgDay6"></h2></div>
+        </div>
+    </div>
+        <!-- sol/day spread 5 -->
+    <div class="d-flex flex-row justify-content-around y">
+    <div class="tempBoxes">
+        <div><p class="transparent">_</p></div>
+        <div><h2 class="tempAvgSol5"></h2></div>
+    </div>
+    <div class="space26">
+        <div class="d-flex flex-row">
+            <div class="space50 alignLeft"><p class="solSol5"></p></div> 
+            <div class="space50 alignRight"><p class="solDay5"></p></div> 
+        </div>
+        <div class="d-flex flex-row m">
+            <div class="space10"></div>
+            <div class="space80 thermometerTop">
+                <div class = "blueMarker" id="blueMarker5"></div>
+            </div>
+            <div class="space10"></div>
+        </div>
+        <div class="d-flex flex-row m">
+            <div class="space10"></div>
+            <div class="space80 thermometerBottom">
+                <div class="redMarker" id="redMarker5"></div>
+            </div>
+            <div class="space10"></div>
+        </div>
+        <div class="d-flex flex-row">
+            <div class="space50 alignLeft">-200°F</div>
+            <div class="space50 alignRight">+200°F</div>
+        </div>
+    </div>
+    <div class="tempBoxes">
+        <div><p class="transparent">_</p></div>
+        <div><h2 class="tempAvgDay5"></h2></div>
+    </div>
+    </div>
+        <!-- sol/day spread 4 -->
+    <div class="d-flex flex-row justify-content-around y">
+        <div class="tempBoxes">
+            <div><p class="transparent">_</p></div>
+            <div><h2 class="tempAvgSol4"></h2></div>
+        </div>
+        <div class="space26">
+            <div class="d-flex flex-row">
+                <div class="space50 alignLeft"><p class="solSol4"></p></div> 
+                <div class="space50 alignRight"><p class="solDay4"></p></div> 
+            </div>
+            <div class="d-flex flex-row m">
+                <div class="space10"></div>
+                <div class="space80 thermometerTop">
+                    <div class = "blueMarker" id="blueMarker4"></div>
+                </div>
+                <div class="space10"></div>
+            </div>
+            <div class="d-flex flex-row m">
+                <div class="space10"></div>
+                <div class="space80 thermometerBottom">
+                    <div class="redMarker" id="redMarker4"></div>
+                </div>
+                <div class="space10"></div>
+            </div>
+            <div class="d-flex flex-row">
+                <div class="space50 alignLeft">-200°F</div>
+                <div class="space50 alignRight">+200°F</div>
+            </div>
+        </div>
+        
+        <div class="tempBoxes">
+            <div><p class="transparent">_</p></div>
+            <div><h2 class="tempAvgDay4"></h2></div>
+        </div>
+    </div>
+        <!-- sol/day spread 3 -->
+    <div class="d-flex flex-row justify-content-around y">
+    <div class="tempBoxes">
+        <div><p class="transparent">_</p></div>
+        <div><h2 class="tempAvgSol3"></h2></div>
+    </div>
+    <div class="space26">
+        <div class="d-flex flex-row">
+            <div class="space50 alignLeft"><p class="solSol3"></p></div> 
+            <div class="space50 alignRight"><p class="solDay3"></p></div> 
+        </div>
+        <div class="d-flex flex-row m">
+            <div class="space10"></div>
+            <div class="space80 thermometerTop">
+                <div class = "blueMarker" id="blueMarker3"></div>
+            </div>
+            <div class="space10"></div>
+        </div>
+        <div class="d-flex flex-row m">
+            <div class="space10"></div>
+            <div class="space80 thermometerBottom">
+                <div class="redMarker" id="redMarker3"></div>
+            </div>
+            <div class="space10"></div>
+        </div>
+        <div class="d-flex flex-row">
+            <div class="space50 alignLeft">-200°F</div>
+            <div class="space50 alignRight">+200°F</div>
+        </div>
+    </div>
+    <div class="tempBoxes">
+        <div><p class="transparent">_</p></div>
+        <div><h2 class="tempAvgDay3"></h2></div>
+    </div>
+    </div>
+        <!-- sol/day spread 2 -->
+    <div class="d-flex flex-row justify-content-around y">
+        <div class="tempBoxes">
+            <div><p class="transparent">_</p></div>
             <div><h2 class="tempAvgSol2"></h2></div>
         </div>
-        <div>
-
+        <div class="space26">
+            <div class="d-flex flex-row">
+                <div class="space50 alignLeft"><p class="solSol2"></p></div> 
+                <div class="space50 alignRight"><p class="solDay2"></p></div> 
+            </div>
+            <div class="d-flex flex-row m">
+                <div class="space10"></div>
+                <div class="space80 thermometerTop">
+                    <div class = "blueMarker" id="blueMarker2"></div>
+                </div>
+                <div class="space10"></div>
+            </div>
+            <div class="d-flex flex-row m">
+                <div class="space10"></div>
+                <div class="space80 thermometerBottom">
+                    <div class="redMarker" id="redMarker2"></div>
+                </div>
+                <div class="space10"></div>
+            </div>
+            <div class="d-flex flex-row">
+                <div class="space50 alignLeft">-200°F</div>
+                <div class="space50 alignRight">+200°F</div>
+            </div>
         </div>
         <div class="tempBoxes">
+            <div><p class="transparent">_</p></div>
             <div><h2 class="tempAvgDay2"></h2></div>
         </div>
     </div>
-    <!-- div below is hiding all of the tests -->
+        <!-- sol/day spread 1 -->
+    <div class="d-flex flex-row justify-content-around y">
+        <div class="tempBoxes">
+            <div><p class="transparent">_</p></div>
+            <div><h2 class="tempAvgSol1"></h2></div>
+        </div>
+        <div class="space26">
+            <div class="d-flex flex-row">
+                <div class="space50 alignLeft"><p class="solSol1"></p></div> 
+                <div class="space50 alignRight"><p class="solDay1"></p></div> 
+            </div>
+            <div class="d-flex flex-row m">
+                <div class="space10"></div>
+                <div class="space80 thermometerTop">
+                    <div class = "blueMarker" id="blueMarker1"></div>
+                </div>
+                <div class="space10"></div>
+            </div>
+            <div class="d-flex flex-row m">
+                <div class="space10"></div>
+                <div class="space80 thermometerBottom">
+                    <div class="redMarker" id="redMarker1"></div>
+                </div>
+                <div class="space10"></div>
+            </div>
+            <div class="d-flex flex-row">
+                <div class="space50 alignLeft">-200°F</div>
+                <div class="space50 alignRight">+200°F</div>
+            </div>
+        </div>
+        <div class="tempBoxes">
+            <div><p class="transparent">_</p></div>
+            <div><h2 class="tempAvgDay1"></h2></div>
+        </div>
+    </div>
+        <!-- footer -->
+    <div class="d-flex flex-row justify-content-around y">
+            <a href="https://mars.nasa.gov/insight/weather/" target=blank><p class="red">MARS</p></a>
+            <p>: SOURCE :</p>
+            <a href="https://dev.meteostat.net/" target=blank><p class="blue">EARTH</p></a>
+    </div>
+        <!-- unused -->
     <div>
-        <br><br><br><br><br><br><br>
-        <br>
         <!-- <p class="userCity"></p> -->
         <br> 
-    <div class="d-flex flex-row justify-content-around">
+    <!-- <div class="d-flex flex-row justify-content-around">
         <div class="d-flex flex-column">
             <p>SOL</p>
             <p>AVG TEMP</p>
@@ -83,27 +283,27 @@
             <p>LOW TEMP</p>
             <p>AVG PRESSURE</p>
             <p>AVG WINDSPEED</p>
-        </div>
+        </div> -->
         <!-- sol1 -->
-        <div class="d-flex flex-column"> 
-            <!-- <p class="solSol1"></p> -->
-            <!-- <p class="tempAvgSol1">-</p> -->
+        <!-- <div class="d-flex flex-column"> 
+            <p class="solSol1"></p>
+            <p class="tempAvgSol1">-</p>
             <p class="tempHighSol1"></p>
             <p class="tempLowSol1"></p>
             <p class="pressureSol1"></p>
             <p class="windSol1"></p>
-        </div>    
+        </div>     -->
         <!-- day1 -->
-        <div class="d-flex flex-column">
-            <!-- <p class="solDay1"></p> -->
-            <!-- <p class="tempAvgDay1">_</p> -->
+        <!-- <div class="d-flex flex-column">
+            <p class="solDay1"></p>
+            <p class="tempAvgDay1">_</p>
             <p class="tempHighDay1"></p>
             <p class="tempLowDay1"></p>
             <p class="pressureDay1"></p>
             <p class="windDay1"></p>
-        </div> 
+        </div>  -->
         <!-- sol2 -->
-        <div class="d-flex flex-column">
+        <!-- <div class="d-flex flex-column">
             <p class="solSol2"></p>
             <p class="tempAvgSol2">_</p>
             <p class="tempHighSol2"></p>
@@ -111,9 +311,9 @@
             <p class="pressureSol2"></p>
             <p class="windSol2"></p>
 
-        </div>
+        </div> -->
         <!-- day2 -->
-        <div class="d-flex flex-column">
+        <!-- <div class="d-flex flex-column">
             <p class="solDay2"></p>
             <p class="tempAvgDay2"></p>
             <p class="tempHighDay2"></p>
@@ -121,9 +321,9 @@
             <p class="pressureDay2"></p>
             <p class="windDay2"></p>
 
-        </div>
+        </div> -->
         <!-- sol3 -->
-        <div class="d-flex flex-column">
+        <!-- <div class="d-flex flex-column">
             <p class="solSol3"></p>
             <p class="tempAvgSol3">_</p>
             <p class="tempHighSol3"></p>
@@ -131,9 +331,9 @@
             <p class="pressureSol3"></p>
             <p class="windSol3"></p>
 
-        </div>
+        </div> -->
         <!-- day3 -->
-        <div class="d-flex flex-column">
+        <!-- <div class="d-flex flex-column">
             <p class="solDay3"></p>
             <p class="tempAvgDay3"></p>
             <p class="tempHighDay3"></p>
@@ -141,9 +341,9 @@
             <p class="pressureDay3"></p>
             <p class="windDay3"></p>
 
-        </div>
+        </div> -->
         <!-- sol4 -->
-        <div class="d-flex flex-column">
+        <!-- <div class="d-flex flex-column">
             <p class="solSol4"></p>
             <p class="tempAvgSol4">_</p>
             <p class="tempHighSol4"></p>
@@ -151,9 +351,9 @@
             <p class="pressureSol4"></p>
             <p class="windSol4"></p>
 
-        </div>
+        </div> -->
         <!-- day4 -->
-        <div class="d-flex flex-column">
+        <!-- <div class="d-flex flex-column">
             <p class="solDay4"></p>
             <p class="tempAvgDay4"></p>
             <p class="tempHighDay4"></p>
@@ -162,9 +362,9 @@
             <p class="windDay4"></p>
             
 
-        </div>
+        </div> -->
         <!-- sol5 -->
-        <div class="d-flex flex-column">
+        <!-- <div class="d-flex flex-column">
             <p class="solSol5"></p>
             <p class="tempAvgSol5">_</p>
             <p class="tempHighSol5"></p>
@@ -172,9 +372,9 @@
             <p class="pressureSol5"></p>
             <p class="windSol5"></p>
 
-        </div>
+        </div> -->
         <!-- day5 -->
-        <div class="d-flex flex-column">
+        <!-- <div class="d-flex flex-column">
             <p class="solDay5"></p>
             <p class="tempAvgDay5"></p>
             <p class="tempHighDay5"></p>
@@ -182,9 +382,9 @@
             <p class="pressureDay5"></p>
             <p class="windDay5"></p>
 
-        </div>
+        </div> -->
         <!-- sol6 -->
-        <div class="d-flex flex-column">
+        <!-- <div class="d-flex flex-column">
             <p class="solSol6"></p>
             <p class="tempAvgSol6">_</p>
             <p class="tempHighSol6"></p>
@@ -192,9 +392,9 @@
             <p class="pressureSol6"></p>
             <p class="windSol6"></p>
 
-        </div>
+        </div> -->
         <!-- day6 -->
-        <div class="d-flex flex-column">
+        <!-- <div class="d-flex flex-column">
             <p class="solDay6"></p>
             <p class="tempAvgDay6"></p>
             <p class="tempHighDay6"></p>
@@ -202,9 +402,9 @@
             <p class="pressureDay6"></p>
             <p class="windDay6"></p>
 
-        </div>
+        </div> -->
         <!-- sol7 -->
-        <div class="d-flex flex-column">
+        <!-- <div class="d-flex flex-column">
             <p class="solSol7"></p>
             <p class="tempAvgSol7">_</p>
             <p class="tempHighSol7"></p>
@@ -212,9 +412,9 @@
             <p class="pressureSol7"></p>
             <p class="windSol7"></p>
 
-        </div>
+        </div> -->
         <!-- day7 -->
-        <div class="d-flex flex-column">
+        <!-- <div class="d-flex flex-column">
             <p class="solDay7"></p>
             <p class="tempAvgDay7"></p>
             <p class="tempHighDay7"></p>
@@ -222,7 +422,7 @@
             <p class="pressureDay7"></p>
             <p class="windDay7"></p>
 
-        </div>
+        </div> -->
     </div>
     </div>
         <!-- JS -->
